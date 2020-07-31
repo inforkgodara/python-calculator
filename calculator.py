@@ -30,7 +30,7 @@ print("4. Divide")
 while True:
     # Take input from the console
     choice = input("Enter choice(1/2/3/4 or n to cancel): ")
-    # Check if choice is one of the four options
+    # Check if choice is one of the five options
     if choice in ('1', '2', '3', '4'):
         first_number = float(input("Enter first number: "))
         second_number = float(input("Enter second number: "))
