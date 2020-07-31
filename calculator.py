@@ -2,20 +2,23 @@
 # Author @inforkgodara
 
 # Function adds two numbers
-def add(firstNumber, secondNumber):
-    return firstNumber + secondNumber
+def add(first_number, second_number):
+    return first_number + second_number
+
 
 # Function subtracts two numbers
-def subtract(firstNumber, secondNumber):
-    return firstNumber - secondNumber
+def subtract(first_number, second_number):
+    return first_number - second_number
+
 
 # Function multiplies two numbers
-def multiply(firstNumber, secondNumber):
-    return firstNumber * secondNumber
+def multiply(first_number, second_number):
+    return first_number * second_number
+
 
 # Function divides two numbers
-def divide(firstNumber, secondNumber):
-    return firstNumber / secondNumber
+def divide(first_number, second_number):
+    return first_number / second_number
 
 
 print("Select options.")
@@ -29,20 +32,20 @@ while True:
     choice = input("Enter choice(1/2/3/4 or n to cancel): ")
     # Check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
-        firstNumber = float(input("Enter first number: "))
-        secondNumber = float(input("Enter second number: "))
+        first_number = float(input("Enter first number: "))
+        second_number = float(input("Enter second number: "))
 
         if choice == '1':
-            print(firstNumber, "+", secondNumber, "=", add(firstNumber, secondNumber))
+            print(first_number, "+", second_number, "=", add(first_number, second_number))
 
         elif choice == '2':
-            print(firstNumber, "-", secondNumber, "=", subtract(firstNumber, secondNumber))
+            print(first_number, "-", second_number, "=", subtract(first_number, second_number))
 
         elif choice == '3':
-            print(firstNumber, "*", secondNumber, "=", multiply(firstNumber, secondNumber))
+            print(first_number, "*", second_number, "=", multiply(first_number, second_number))
 
         elif choice == '4':
-            print(firstNumber, "/", secondNumber, "=", divide(firstNumber, secondNumber))
+            print(first_number, "/", second_number, "=", divide(first_number, second_number))
     elif choice == 'n':
         print("Your are successfully logged out!")
         break
