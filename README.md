@@ -1,6 +1,6 @@
 # Python Calculator
 
-It is a basic python calculator which can perform basic arithmetic operations like addition, subtraction, multiplication.
+It is a basic python calculator which can perform basic arithmetic operations like addition, subtraction, multiplication. Python 3.8 is used for the implementation.
 
 ## Approach
 
