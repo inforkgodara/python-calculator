@@ -1,53 +1,76 @@
-# Program make a basic calculator
-# Author @inforkgodara
+# Program makes a basic calculator
+# Original author: @inforkgodara
 
-# Function adds two numbers
+
 def add(first_number, second_number):
     return first_number + second_number
 
 
-# Function subtracts two numbers
 def subtract(first_number, second_number):
     return first_number - second_number
 
 
-# Function multiplies two numbers
 def multiply(first_number, second_number):
     return first_number * second_number
 
 
-# Function divides two numbers
 def divide(first_number, second_number):
+    if second_number == 0:
+        raise ValueError("Division by zero is not allowed.")
+
     return first_number / second_number
 
 
-print('Select options.')
-print('1. Add')
-print('2. Subtract')
-print('3. Multiply')
-print('4. Divide')
+def main():
+    print("Select an option.")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
 
-while True:
-    # Take input from the console
-    choice = input('Enter choice(1/2/3/4 or n to cancel): ')
-    # Check if choice is one of the five options
-    if choice in ('1', '2', '3', '4'):
-        first_number = float(input('Enter first number: '))
-        second_number = float(input('Enter second number: '))
+    while True:
+        choice = input(
+            "Enter choice (1/2/3/4 or n to cancel): "
+        ).strip().lower()
 
-        if choice == '1':
-            print(first_number, '+', second_number, '=', add(first_number, second_number))
+        if choice in ("1", "2", "3", "4"):
+            try:
+                first_number = float(
+                    input("Enter first number: ")
+                )
+                second_number = float(
+                    input("Enter second number: ")
+                )
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+                continue
 
-        elif choice == '2':
-            print(first_number, '-', second_number, '=', subtract(first_number, second_number))
+            if choice == "1":
+                result = add(first_number, second_number)
+                print(first_number, "+", second_number, "=", result)
 
-        elif choice == '3':
-            print(first_number, '*', second_number, '=', multiply(first_number, second_number))
+            elif choice == "2":
+                result = subtract(first_number, second_number)
+                print(first_number, "-", second_number, "=", result)
 
-        elif choice == '4':
-            print(first_number, '/', second_number, '=', divide(first_number, second_number))
-    elif choice == 'n':
-        print('Your are successfully logged out!')
-        break
-    else:
-        print('Please enter correct input among these 1/2/3/4/n')
+            elif choice == "3":
+                result = multiply(first_number, second_number)
+                print(first_number, "*", second_number, "=", result)
+
+            elif choice == "4":
+                try:
+                    result = divide(first_number, second_number)
+                    print(first_number, "/", second_number, "=", result)
+                except ValueError as error:
+                    print(f"Error: {error}")
+
+        elif choice == "n":
+            print("You have successfully exited the calculator!")
+            break
+
+        else:
+            print("Please enter a valid choice: 1, 2, 3, 4, or n.")
+
+
+if __name__ == "__main__":
+    main()
