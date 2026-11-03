@@ -15,6 +15,13 @@ def subtract(first_number, second_number):
 def multiply(first_number, second_number):
     return first_number * second_number
 
+# Function calculates percentage
+def percentage(first_number, second_number):
+    if second_number == 0:
+        return "Error: Cannot calculate percentage with zero denominator"
+
+    return (first_number / second_number) * 100
+
 
 # Function divides two numbers
 def divide(first_number, second_number):
@@ -26,12 +33,13 @@ print('1. Add')
 print('2. Subtract')
 print('3. Multiply')
 print('4. Divide')
+print('5. Percentage')
 
 while True:
     # Take input from the console
-    choice = input('Enter choice(1/2/3/4 or n to cancel): ')
+    choice = input('Enter choice(1/2/3/4/5 or n to cancel): ')
     # Check if choice is one of the five options
-    if choice in ('1', '2', '3', '4'):
+    if choice in ('1', '2', '3', '4','5'):
         first_number = float(input('Enter first number: '))
         second_number = float(input('Enter second number: '))
 
@@ -46,8 +54,11 @@ while True:
 
         elif choice == '4':
             print(first_number, '/', second_number, '=', divide(first_number, second_number))
+
+        elif choice == '5':
+            print(first_number, 'is', percentage(first_number, second_number), '% of', second_number)
     elif choice == 'n':
         print('Your are successfully logged out!')
         break
     else:
-        print('Please enter correct input among these 1/2/3/4/n')
+        print('Please enter correct input among these 1/2/3/4/5/n')
